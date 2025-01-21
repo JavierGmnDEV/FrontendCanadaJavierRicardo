@@ -6,8 +6,6 @@ const Confirm = () => {
     <div>
       <NavbarMaterial />
       <OfertaComercial />
-      
-
     </div>
   );
 };

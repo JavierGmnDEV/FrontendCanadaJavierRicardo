@@ -7,7 +7,6 @@ import ScrollToTopButton from '../components/ScrollToUp';
 import RecommendedProductsCarousel from '../components/RecommendedProductsCarrousel';
 import { Box } from '@mui/material';
 import SearchBar from '../components/SearchBar';
-import LiquidationSection from '../components/FirstInfo';
 import AboutUs from '../components/AboutUs';
 
 const data = [
@@ -47,7 +46,7 @@ function Ecommerce() {
   return (
     <div>
       <NavbarMaterial />
-      <LiquidationSection/>
+      
       <Box id="search-section" sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' }, justifyContent: 'center' }}>
         <SearchBar /> {/* Eliminar el prop onSearch */}
       </Box>

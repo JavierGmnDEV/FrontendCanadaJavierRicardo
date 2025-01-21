@@ -16,7 +16,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { Menu } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
-const pages = ['Products', 'Requests', 'Documents', 'About'];
+const pages = ['Sell', 'Requests', 'Documents', 'About'];
 const settings = ['Logout'];
 
 const NavbarMaterial = () => {
@@ -70,12 +70,14 @@ const NavbarMaterial = () => {
 
   const handlePageNavigation = (page) => {
     switch (page) {
+      
       case 'Home':
+        navigate('/Home');
+        break;
+        case 'Sell':
         navigate('/ecommerce');
         break;
-      case 'Products':
-        document.getElementById('search-section').scrollIntoView({ behavior: 'smooth' });
-        break;
+      
       case 'Requests':
         navigate('/solicitudes');
         break;
@@ -94,7 +96,7 @@ const NavbarMaterial = () => {
 
   return (
     <div className='z-50'>
-      <AppBar position="static" sx={{ backgroundColor: '#1e90ff', zIndex: "1000" }} className='z-50'>
+      <AppBar position="static" sx={{ backgroundColor: 'white', zIndex: "1000", }} className='z-50'>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', } }} >
@@ -106,15 +108,21 @@ const NavbarMaterial = () => {
                 onClick={handleOpenNavMenu}
                 color="inherit"
               >
-                <MenuIcon />
+                <MenuIcon className='text-blue-800' />
               </IconButton>
             </Box>
             <Typography
               noWrap
               component="div"
-              sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' } }}
+              sx={{
+                flexGrow: 1,
+                display: { xs: 'flex', md: 'flex' },
+                background: 'linear-gradient(90deg, blue, red)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
             >
-              ASCYXL SERVICE & REPRESENTATION
+              ASCYKL SERVICE & REPRESENTATION
             </Typography>
           
             <Box sx={{ flexGrow: 0 }}>
@@ -150,7 +158,9 @@ const NavbarMaterial = () => {
                 </>
               ) : (
                 <IconButton onClick={() => googleLogin()} sx={{ color: 'white' }}>
-                  <Typography variant="button">Login</Typography>
+                  <Typography variant="button" sx={{ background: 'rgb(234, 67, 53)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',}}>Login</Typography>
                 </IconButton>
               )}
             </Box>

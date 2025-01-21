@@ -19,10 +19,10 @@ const LiquidationSection = () => {
         . El puerto de Mariel es una infraestructura clave en Cuba, diseñada para manejar grandes volúmenes de carga y atraer inversiones extranjeras. 
         </p>
         <button
-          className="mt-4 px-6 py-3 bg-blue-500 text-white font-semibold rounded hover:bg-blue-700 transition"
+          className="px-6 py-2 mt-6 border border-white text-white font-semibold rounded hover:bg-gray-200 hover:text-black transition"
           onClick={openContactModal}
         >
-          Contact Us
+          Contáctanos
         </button>
       </div>
 

@@ -37,14 +37,14 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="flex items-center justify-center w-64 mt-3 ">
+    <div className="flex items-center justify-center w-w-60 mt-3 ">
       <TextField
-        variant="outlined"
+        variant="standard"
         placeholder="Buscar productos..."
         value={query}
         onChange={handleChange}
         onKeyPress={handleKeyPress}
-        className="flex-grow"
+        className="flex-grow max-h-14 "
       />
       <IconButton onClick={handleSearch} color="primary">
         <SearchIcon />

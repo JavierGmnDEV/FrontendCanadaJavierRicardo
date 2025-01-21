@@ -1,59 +1,55 @@
 import { Box, Typography, Button } from '@mui/material';
 import { useModalStore } from '../storeZustand/authStore';
 import ContactModal from './ContactModal';
-import mapa from '../images/mariel.png';
+
 const AboutUs = () => {
   const { openContactModal } = useModalStore();
 
   return (
-    <Box sx={{ bgcolor: 'background.paper', p: 4, mt: 4 }} id='about-section'>
-      <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' } }}>
-        <Box sx={{ flex: 1, pr: { md: 4 } }}>
-          <Typography variant="h5" gutterBottom fontWeight="bold">
-            Proveedores de Insumos y Logística
+    <Box sx={{ bgcolor: 'background.paper', p: 6, mt: 4 }} id='about-section'>
+      <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'space-between', alignItems: 'center' }}>
+        <Box sx={{ flex: 1, textAlign: 'center', mb: { xs: 4, md: 0 } }}>
+          <Typography variant="h6" fontWeight="bold" mb={2}>
+            MÁS INFORMACIÓN
           </Typography>
-          <Typography variant="body1" paragraph>
-            La empresa <strong>ASCYXL SERVICE & REPRESENTATION</strong> está ubicada en el puerto de Mariel, Cuba, y se especializa en la importación de insumos por contenedores.
+          <Typography variant="body1" mb={2}>
+            Teléfono: +53 55041870
           </Typography>
-          <Typography variant="body1" paragraph>
-            El puerto de Mariel es una infraestructura clave en Cuba, diseñada para manejar grandes volúmenes de carga y atraer inversiones extranjeras.
+          <Typography variant="body1" mb={2}>
+            Email: info@ASCYKL.com
           </Typography>
-
-          <Box sx={{ mt: 2 }}>
-            <Typography variant="subtitle1" fontWeight="bold">
-              Dirección:
-            </Typography>
-            <Typography variant="body2">
-              Zona Especial de Desarrollo Mariel, Cuba
-            </Typography>
-
-            <Typography variant="subtitle1" fontWeight="bold" sx={{ mt: 2 }}>
-              Horario de atención:
-            </Typography>
-            <Typography variant="body2">
-              Lunes a Viernes: 9:00 AM - 6:00 PM
-            </Typography>
-          </Box>
-
+        </Box>
+        <Box sx={{ flex: 1, textAlign: 'center', mb: { xs: 4, md: 0 } }}>
+          <ul>
+            <li className="mb-2"><a href="#" className="hover:underline">SOBRE NOSOTROS</a></li>
+            <li className="mb-2"><a href="#" className="hover:underline">CÓMO FUNCIONAMOS?</a></li>
+            <li className="mb-2"><a href="#" className="hover:underline">TÉRMINOS Y CONDICIONES</a></li>
+            <li className="mb-2"><a href="#" className="hover:underline">DECLARACIÓN DE PRIVACIDAD</a></li>
+            <li className="mb-2"><a href="#" className="hover:underline">POLÍTICA DE DEVOLUCIONES</a></li>
+            <li className="mb-2"><a href="#" className="hover:underline">INFORMACIÓN DE ENVÍO</a></li>
+          </ul>
+        </Box>
+        <Box sx={{ flex: 1, textAlign: 'center' }}>
           <Button
             variant="contained"
             color="primary"
             onClick={openContactModal}
-            sx={{ mt: 2 }}
+            sx={{ py: 2, px: 4, borderRadius: '8px', backgroundColor: 'blue', '&:hover': { backgroundColor: 'primary.main' } }}
           >
-            Contact Us
+            Contáctanos
           </Button>
         </Box>
-
-        <Box sx={{ flex: 2, mt: { xs: 4, md: 4 } }}>
-          <img
-            src={mapa}
-            alt="Company Location"
-            style={{ width: '100%', height: '80%', borderRadius: '8px' , marginTop: '-20px'}}
-          />
+      </Box>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 8 }}>
+        <Typography variant="body2">
+          &copy; 2025 ASCYKL SERVICE & REPRESENTATION. Todos los derechos reservados.
+        </Typography>
+        <Box sx={{ display: 'flex', gap: 2 }}>
+          <a href="#" className="hover:underline">Facebook</a>
+          <a href="#" className="hover:underline">Twitter</a>
+          <a href="#" className="hover:underline">Instagram</a>
         </Box>
       </Box>
-
       {/* Modal de contacto */}
       <ContactModal />
     </Box>

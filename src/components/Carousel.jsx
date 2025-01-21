@@ -2,6 +2,9 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useState, useEffect } from 'react';
 import { useSearchStore } from '../storeZustand/authStore';
+import { Button } from '@mui/material';
+import { Navigate } from 'react-router-dom';
+import { DirectionsBoat } from '@mui/icons-material';
 
 export const Carousel = () => {
   const products = useSearchStore((state) => state.products);
@@ -33,7 +36,29 @@ export const Carousel = () => {
   };
 
   if (products.length === 0) {
-    return <div>No products available</div>;
+    return (
+      <div className="relative flex justify-center items-center h-screen">
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: 'url(https://img.freepik.com/foto-gratis/vista-aerea-buque-carga-contenedor-carga-mar_335224-1372.jpg?t=st=1737427385~exp=1737430985~hmac=81dd28f7c51fe8ace61f9d866da4d943eadc530a29760259d667eae08b1bd2ef&w=900)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          filter: 'blur(8px)',
+          zIndex: 0,
+        }}
+      ></div>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => Navigate('/ecommerce')}
+        sx={{ py: 2, px: 4, fontSize: '1.5rem', zIndex: 1 }}
+      >
+        <DirectionsBoat  className='m-1'/>
+          únete
+      </Button>
+    </div>
+    );
   }
 
   return (
